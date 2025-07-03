@@ -125,6 +125,10 @@ int main(int argc, char **argv) {
   b_optvalue = false;
   nh_private.param<bool>("support_motor_dtr", b_optvalue, false);
   laser.setlidaropt(LidarPropSupportMotorDtrCtrl, &b_optvalue, sizeof(bool));
+  //debug
+  b_optvalue = false;
+  nh_private.param<bool>("debug", b_optvalue, false);
+  laser.setEnableDebug(b_optvalue);
 
   //////////////////////float property/////////////////
   /// unit: °
